@@ -1,4 +1,8 @@
 <?php
+
+
+
+
     if ($_REQUEST["tipo_usuario"] == "Paciente"){
         header("location: paciente.php");
     }
