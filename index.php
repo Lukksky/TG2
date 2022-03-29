@@ -19,7 +19,7 @@ if ($con->connect_errno) {
    
 }
 
-$sql = "SELECT dados_usuario FROM agendamento_paciente ORDER BY STR_TO_DATE(data_agend, '%d-%m-%Y')";
+$sql = "SELECT * FROM dados_usuario WHERE cpf_dados_pac = '122.345.897-01' AND senha_usuario = md5("123")";
     $res = mysqli_query($conexao, $sql)
     or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 
@@ -69,7 +69,7 @@ $con->close();
     
     <div class="form-group">
         <label for="login_usuario">Login: </label>
-        <input type="text" class="form-control" id="login_usuario" name="login_usuario" placeholder="Digite o seu login">
+        <input type="text" class="form-control" id="login_usuario" name="login_usuario" placeholder="CPF somente número">
     
     </div>
     
