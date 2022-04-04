@@ -1,36 +1,19 @@
 <?php 
 
-//conexao ao banco de dados
+include_once('config.php');
 
-$host="localhost";
-$user="root";
-$password="";
-$dbname="tg2";
-$usertable="agendamento_paciente";
 
-$con = new mysqli($host, $user, $password, $dbname);
-
-if ($con->connect_errno) {
-    echo "<p>ERRO: (" . $con->connect_errno . ") ". 
-    $con->connect_error . "</p>";
-    exit;
-} else{
-    //echo "<p>Conexão realizada com sucesso</p>";
-   
-}
-
-$sql = "SELECT * FROM dados_usuario WHERE cpf_dados_pac = '122.345.897-01' AND senha_usuario = md5("123")";
-    $res = mysqli_query($conexao, $sql)
+    /*$res = mysqli_query($conexao, $sql)
     or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 
     
     while ($campo = mysqli_fetch_array($res)) 
     {
-        echo "Data agendada: ". $campo["data_agend"]. /*"<br>Horário agendado: ". $campo["horario_agend"]. 
-        "<br>Especialidade: ". $campo["especialidade_agend"].*/ "<br><br>";
+        echo "Data agendada: ". $campo["data_agend"]. "<br>Horário agendado: ". $campo["horario_agend"]. 
+        "<br>Especialidade: ". $campo["especialidade_agend"]."<br><br>";
     }
+*/
 
-$con->close();
 ?>
 
 
@@ -97,7 +80,7 @@ $con->close();
     
 
 
-<button type="submit" class="btn btn-success">Acessar</button>
+<button type="submit" class="btn btn-success" name="entrar">Acessar</button>
 </div>
 </form>
 </body>
