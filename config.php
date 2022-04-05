@@ -14,7 +14,7 @@ if ($con->connect_errno) {
     $con->connect_error . "</p>";
     exit;
 } else{
-    echo "<p>Conexão realizada com sucesso</p>";
+    //echo "<p>Conexão realizada com sucesso</p>";
    
 }
 

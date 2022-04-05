@@ -2,16 +2,19 @@
 
 include_once('config.php');
 
-$usuario = mysqli_real_escape_string($_POST['login_usuario']);
-$senha = md5(mysqli_real_escape_string($_POST['senha_usuario']));
+$usuario = ($_POST['login_usuario']);
+$senha = md5($_POST['senha_usuario']);
 $entrar = $_POST['entrar'];
 
 
 $sql = "SELECT * FROM dados_usuario WHERE cpf_dados_pac = '$usuario' AND senha_usuario = '$senha'";
 
+if ($_POST['entrar']) {
+
 $acao_sql = $mysqli->query($sql);
 
-            if ($acao_sql=mysqli_num_rows($sql)>=0){
+            if ($acao_sql->num_rows == 1)
+            {
 
                 setcookie("usuario",$usuario);
                 header("Location:painel.php");
@@ -21,6 +24,7 @@ $acao_sql = $mysqli->query($sql);
                 die();
 
             }
+        }
 
 
     if ($_REQUEST["tipo_usuario"] == "Paciente"){
