@@ -27,7 +27,7 @@
     $res = mysqli_query($conexao, $sql)
     or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 
-    
+
     while ($campo = mysqli_fetch_array($res)) 
     {
         echo "Data agendada: ". $campo["data_agend"]. "<br>Horário agendado: ". $campo["horario_agend"]. 
