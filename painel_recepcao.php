@@ -18,7 +18,7 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="medico.php">OrderClin</a>
+  <a class="navbar-brand" href="recepcao.php">OrderClin</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -27,19 +27,17 @@
     <ul class="navbar-nav mr-auto">
       
       <li class="nav-item">
-        <a class="nav-link" href="agenda_medica_diaria.php">Consultas do dia</a>
+        <a class="nav-link" href="historico_paciente.php">Agendamento</a>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href="dados_cadastrais_usuario.php">Atualizar cadastro</a>
+        <a class="nav-link" href="cadastrar_novo_usuario_form.php">Cadastro</a>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href="atendimento_medico_form.php">Diagnóstico</a>
+        <a class="nav-link" href="crud/cadastrar.php">Gerenciar contas</a>
       </li>
-
+      
       <li class="nav-item">
-        <a class="nav-link" href="#">Histórico</a>
+        <a class="nav-link" href="#">Historico</a>
       </li>
       
     </ul>

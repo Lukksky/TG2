@@ -19,6 +19,6 @@ if ($con->connect_errno) {
 }
 
 
-$con->close();
+//$con->close();
 
 ?>

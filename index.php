@@ -37,18 +37,17 @@ include_once('config.php');
     <div class="container">
         <h1 class="text-success text-center">OrderClin</h1>
         <h3>Painel de acesso</h3>
+
+
+<?php
+if(isset($_GET["msg"])) {
+    echo "<h3>".$_GET["msg"]."</h3>";
+}
+
+?>
+
         <form action="login.php" method="POST">
             
-
-    <div class="form-group">
-        <label for="tipo_usuario">Escolha a área que desejar acessar: </label>
-        <select class="form-control" id="tipo_usuario" name="tipo_usuario">
-            <option>(Nenhum)</option checked>
-            <option>Recepção</option>
-            <option>Medico</option>
-            <option>Paciente</option>
-        </select>
-    </div>
     
     <div class="form-group">
         <label for="login_usuario">Login: </label>
