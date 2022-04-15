@@ -16,7 +16,7 @@ include_once("topo.php"); ?>
         <a class="nav-link" href="agendamento_paciente_form.php">Agendamento</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="dados_cadastrais_usuario.php">Atualizar cadastro</a>
+        <a class="nav-link" href="dados_cadastrais_paciente.php">Atualizar cadastro</a>
       </li>
       
       <li class="nav-item">

@@ -17,7 +17,7 @@ include_once ("topo.php"); ?>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="dados_cadastrais_usuario.php">Atualizar cadastro</a>
+        <a class="nav-link" href="dados_cadastrais_medico.php">Atualizar cadastro</a>
       </li>
 
       <li class="nav-item">

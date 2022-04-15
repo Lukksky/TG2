@@ -1,4 +1,5 @@
-<?php include_once("topo_recepcao.php"); ?>
+<?php $perfil_pagina = "Atendente";
+include_once("topo.php"); ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
