@@ -1,5 +1,6 @@
 <?php $perfil_pagina = "Paciente";
- include_once("topo.php"); ?>
+ include_once("topo.php");
+ include_once("paciente.php") ?>
 
     <div class="container">
         <h1 class="text-success text-center">OrderClin</h1>

@@ -1,10 +1,10 @@
-<?php 
-$perfil_pagina = "Medico";
-include_once ("topo.php"); ?>
 
+<?php 
+$perfil_pagina = "Paciente";
+include_once("topo.php"); ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="home_medico.php">OrderClin</a>
+  <a class="navbar-brand" href="paciente.php">OrderClin</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,19 +13,14 @@ include_once ("topo.php"); ?>
     <ul class="navbar-nav mr-auto">
       
       <li class="nav-item">
-        <a class="nav-link" href="agenda_medica_diaria.php">Consultas do dia</a>
+        <a class="nav-link" href="agendamento_paciente_form.php">Agendamento</a>
       </li>
-
       <li class="nav-item">
-        <a class="nav-link" href="dados_cadastrais_medico.php">Atualizar cadastro</a>
+        <a class="nav-link" href="dados_cadastrais_paciente.php">Atualizar cadastro</a>
       </li>
-
+      
       <li class="nav-item">
-        <a class="nav-link" href="atendimento_medico_form.php">Diagnóstico</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">Histórico</a>
+        <a class="nav-link" href="historico_paciente.php">Historico</a>
       </li>
       
     </ul>
@@ -58,8 +53,8 @@ include_once ("topo.php"); ?>
   </div>
 </nav>
 
+-->
 
-  
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
@@ -68,24 +63,19 @@ include_once ("topo.php"); ?>
       <p><a href="medico.php">M</a></p>
     </div>
     <div class="col-sm-8 text-left"> 
-    <fieldset>
-        <h1>Painél do Médico</h1>
-        <h3>Seja bem vindo!</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <hr>
-        </fieldset>
-
-      <p>
-          <h3>Dúvidas</h3>
-      <p>
-        
-      Estamos a disposição para melhor te atender dentro dos seguintes horários:<br />
+      <h1>Painel do paciente</h1>
+      <h3>Seja bem vindo!</h3>
+      <p>Complete o seu cadastro atualizando seus dados na aba ATUALIZAR DADOS CADASTRAIS antes de solicitar um agendamento médico.</p>
+      <hr>
+      <h3>Dúvidas</h3>
+      <p>Estamos a disposição para melhor te atender dentro dos seguintes horários:<br />
           seg a sext - 09h00 as 18h00<br />
           sáb - 09h00 a 12h00<br />
         
         whatsapp: (11)98765-4321
+      </p>
     </div>
-   
+    
   </div>
 </div>
 
@@ -95,4 +85,3 @@ include_once ("topo.php"); ?>
 
 </body>
 </html>
--->

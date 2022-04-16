@@ -1,5 +1,6 @@
 <?php $perfil_pagina = "Atendente";
-include_once("topo.php"); ?>
+include_once("topo.php"); 
+include_once("recepcao.php") ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -24,7 +25,7 @@ include_once("topo.php"); ?>
 
     <div class="form-group">
         <label for="cpf_cad_usuario"required>CPF: </label>
-        <input type="text" class="form-control" id="cpf_cad_usuario" name="cpf_cad_usuario" placeholder="Insira o CPF"required>
+        <input type="text" class="form-control" id="cpf_cad_usuario" name="cpf_cad_usuario" placeholder="Insira o CPF sem pontos e traços"required>
     
     </div>
     
@@ -100,14 +101,16 @@ include_once("topo.php"); ?>
               <div class="invalid-feedback">
                 Por favor digite uma senha.
               </div>
-            </div>
+    </div>
 
             <div class="col-12">
-              <label for="confsenha" class="form-label">Confirma Senha</label>
-              <input type="password" class="form-control" name="confsenha" id="confsenha" required>
-              <div class="invalid-feedback">
-                Por favor digite a confirmação da senha.
-              </div>
+              <label for="perfil_usuario" class="form-label"><br>Perfil do usuário:</label>
+                <select name="perfil_usuario" required>
+                    <option value=""></option>
+                    <option value="Atendente">Atendente</option>
+                    <option value="Medico">Médico</option>
+                    <option value="Paciente">Paciente</option>
+                </select> 
             </div>
 
 <br/>

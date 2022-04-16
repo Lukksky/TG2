@@ -1,5 +1,6 @@
 <?php $perfil_pagina = "Atendente";
-include_once ("topo.php"); ?>
+include_once ("topo.php");
+include_once("recepcao.php") ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -25,7 +26,7 @@ include_once ("topo.php"); ?>
         $dtn_cad_usuario = $_REQUEST["dtn_cad_usuario"];
         $sexo_usuario = $_REQUEST["sexo_usuario"];
         $senha_usuario = md5($_REQUEST["senha_usuario"]);
-        $conf_senha = md5($_REQUEST["confsenha"]);
+        $perfil_usuario = $_REQUEST["perfil_usuario"];
 
 
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
@@ -33,7 +34,7 @@ include_once ("topo.php"); ?>
 
         $sql = "INSERT INTO dados_usuario VALUES ('$cpf_cad_usuario', '$endereco_usuario', '$num_res_usuario', 
         '$bairro_usuario', '$cidade_usuario','$estado_usuario','$cep_usuario','$nome_cad_usuario',
-        '$rg_cad_usuario','$dtn_cad_usuario','$sexo_usuario','$senha_usuario', '$conf_senha')";
+        '$rg_cad_usuario','$dtn_cad_usuario','$sexo_usuario','$senha_usuario', '$perfil_usuario')";
         mysqli_query($conexao, $sql)
         or die("A inclusão falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
         mysqli_close($conexao);

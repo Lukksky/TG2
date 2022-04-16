@@ -6,7 +6,7 @@ include_once ("topo.php"); ?>
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="recepcao.php">OrderClin</a>
+  <a class="navbar-brand" href="home_atendente.php">OrderClin</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,10 +20,6 @@ include_once ("topo.php"); ?>
       <li class="nav-item">
         <a class="nav-link" href="cadastrar_novo_usuario_form.php">Cadastro</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="crud/cadastrar.php">Gerenciar contas</a>
-      </li>
-      
       <li class="nav-item">
         <a class="nav-link" href="#">Historico</a>
       </li>
@@ -58,7 +54,7 @@ include_once ("topo.php"); ?>
   </div>
 </nav>
 
--->
+
 
 <html lang="pt-BR">
 <head>
@@ -115,3 +111,5 @@ include_once ("topo.php"); ?>
 
 </body>
 </html>
+
+-->

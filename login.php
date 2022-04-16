@@ -19,7 +19,7 @@ $sql = "SELECT * FROM dados_usuario WHERE cpf_dados_pac = '$usuario' AND senha_u
         $_SESSION["usuario"] = $registro["nome_dados_pac"];
         $_SESSION["perfil_usuario"] = $registro["perfil_usuario"];
         if ($registro["perfil_usuario"] == "Paciente"){
-            header("location: paciente.php");
+            header("location: home_paciente.php");
         }
     
         if ($registro["perfil_usuario"] == "Medico"){
@@ -27,7 +27,7 @@ $sql = "SELECT * FROM dados_usuario WHERE cpf_dados_pac = '$usuario' AND senha_u
         }
     
         if ($registro["perfil_usuario"] == "Atendente"){
-            header("location: recepcao.php");
+            header("location: home_atendente.php");
         }
 
     }else{

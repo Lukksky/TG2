@@ -1,5 +1,6 @@
 <?php $perfil_pagina = "Medico";
-include_once("topo.php");?>
+include_once("topo.php");
+include_once("medico.php") ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">

@@ -1,4 +1,6 @@
-<?php include_once("topo.php"); ?>
+<?php $perfil_pagina = "Paciente";
+    include_once("topo.php");
+    include_once("paciente.php") ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
