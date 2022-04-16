@@ -23,7 +23,7 @@ $sql = "SELECT * FROM dados_usuario WHERE cpf_dados_pac = '$usuario' AND senha_u
         }
     
         if ($registro["perfil_usuario"] == "Medico"){
-            header("location: medico.php");
+            header("location: home_medico.php");
         }
     
         if ($registro["perfil_usuario"] == "Atendente"){

@@ -1,5 +1,11 @@
 <?php 
 
+session_start();
+if(isset($_REQUEST["sair"])) {
+    session_abort();
+    $_SESSION = array();
+}
+
 include_once('config.php');
 
 

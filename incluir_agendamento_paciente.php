@@ -1,6 +1,8 @@
 <?php $perfil_pagina = "Paciente";
     include_once("topo.php");
     include_once("paciente.php") ?>
+
+    <!--
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,6 +12,7 @@
     <title>Inclusão agendamento</title>
 </head>
 <body>
+-->
     <h1>Agendamentos</h1>
 
     <?php

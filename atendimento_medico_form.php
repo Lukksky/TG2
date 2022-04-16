@@ -1,37 +1,41 @@
 <?php $perfil_pagina = "Medico";
 include_once ("topo.php");
-include_once("medico.php") ?>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atendimento médico</title>
+include_once("medico.php");
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+$conexao = mysqli_connect('localhost', 'root', '', 'tg2')
+or die("ERRO: sem conexão");
 
-</head>
-<body>
+$sql = "SELECT ID_agend, date_format(data_agend,'%d/%m/%Y') data_agend, horario_agend,
+        modalidade_agend, especialidade_agend, unidade_agend,
+        convenio_agend, nome_convenio_agend, nome_dados_pac, sexo_dados_pac
+    FROM agendamento_paciente 
+    INNER JOIN dados_usuario on (cpf_agend = cpf_dados_pac)
+    WHERE ID_agend = ". $_REQUEST["agend"] ."
+    ORDER BY horario_agend";
+$res = mysqli_query($conexao, $sql)
+or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
+
+$campo = mysqli_fetch_array($res);
+
+?>
+
+
+
     <div class="container">
         <h1 class="text-success text-center">OrderClin</h1>
         <h3>Atendimento médico</h3>
-        <form action="#" method="POST">
+        <form action="incluir_diagnostico_medico.php" method="POST">
 
     <div class="form-group">
         <label for="id_ag_pac">Código do agendamento </label>
-        <input type="search" class="form-control" id="id_ag_pac" name="id_ag_pac" placeholder="SELECT BD ID_AGENDAMENTO_PACIENTE">
+        <input type="search" class="form-control" id="id_ag_pac" name="id_ag_pac" value="<?php echo $_REQUEST["agend"]; ?>" readonly>
     
     </div>
 
     <div class="form-group">
-        <label for="cpf_dados_pac">Código do paciente (CPF) </label>
-        <input type="search" class="form-control" id="cpf_dados_pac" name="cpf_dados_pac" placeholder="SELECT BD CPF_DADOS_PACIENTE">
+        <label for="cpf_dados_pac">Paciente (CPF) </label>
+        <input type="search" class="form-control" id="cpf_dados_pac" name="cpf_dados_pac" value="<?php echo $campo["nome_dados_pac"]; ?>" readonly> 
     
     </div>
 
@@ -59,12 +63,12 @@ include_once("medico.php") ?>
     
     </div>
 
-    <div>
-
-    <input type="checkbox" name="recomend_at_med" value="atestar"> Atestar<br />
-    <input type="checkbox" name="recomend_at_med" value="medicar"> Medicar<br />
-    <input type="checkbox" name="recomend_at_med" value="solicitacao"> Solicitação de exame<br />
-    <input type="checkbox" name="recomend_at_med" value="retorno"> Retorno<br />
+    <div class="form-group">
+        <label for="recomendacao_med"><h3>Recomendações médicas: </h3></label><br>
+        <input type="checkbox" name="recomendacao_med" value="atestar"> Atestado<br />
+        <input type="checkbox" name="recomendacao_med" value="medicar"> Medicação<br />
+        <input type="checkbox" name="recomendacao_med" value="solicitacao"> Exame<br />
+        <input type="checkbox" name="recomendacao_med" value="retorno"> Agendar retorno<br />
     </div>   
     
     <br />
@@ -73,9 +77,6 @@ include_once("medico.php") ?>
 <div class="form-group">
     <button type="submit" class="btn btn-success">Salvar</button>
 </div>
-
-<a href="medico.php">Voltar</a>
-   
 
 
 <br/>
