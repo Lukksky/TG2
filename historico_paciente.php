@@ -29,12 +29,26 @@ include_once("recepcao.php") ?>
     $res = mysqli_query($conexao, $sql)
     or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 
+    echo '<table class="table">
+        <tr>
+            <td>Data agendada</td>
+            <td>Horário</td>
+            <td>Especialidade</td>
+            <td>Nome do paciente</td>
+            <td>Sexo</td>
+            <td></td>
+        </tr>';
 
     while ($campo = mysqli_fetch_array($res)) 
     {
-        echo "Data agendada: ". $campo["data_agend"]. "<br>Horário agendado: ". $campo["horario_agend"]. 
-        "<br>Modalidade do agendamento: ". $campo["modalidade_agend"]. "<br>Especialidade: "
-        . $campo["especialidade_agend"]. "<br>Unidade de atendimento: ". $campo['unidade_agend'] ."<br><br>";
+        echo "<tr>
+        <td>". $campo["data_agend"]. "</td>
+        <td>". $campo["horario_agend"]. "</td>
+        <td>". $campo["modalidade_agend"]. "</td>
+        <td>". $campo["especialidade_agend"]. "</td>
+        <td> ". $campo['unidade_agend'] ."</td>
+        </tr>";
+        
     }
         
     mysqli_close($conexao);

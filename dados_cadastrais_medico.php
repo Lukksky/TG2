@@ -24,14 +24,36 @@ include_once("medico.php") ?>
         $res = mysqli_query($conexao, $sql)
         or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 
+        echo '<table class="table">
+        <tr>
+            <td>Nome</td>
+            <td>RG</td>
+            <td>Data de nascimento</td>
+            <td>Sexo</td>
+            <td>Endereço</td>
+            <td>Número</td>
+            <td>Bairro</td>
+            <td>Cidade</td>
+            <td>Estado</td>
+            <td>CEP</td>
+            <td></td>
+        </tr>';
         
         while ($campo = mysqli_fetch_array($res)) 
         {
-            echo "<br>Nome: ". $campo["nome_dados_pac"]. "<br>RG: ". $campo["rg_dados_pac"]. 
-            "<br>Data de nascimento: ". $campo["dtn_dados_pac"]. "<br>Sexo: ". $campo["sexo_dados_pac"]. 
-            "<br>Endereço: ". $campo["endereco_dados_pac"]."<br>Número: ". $campo["num_res_dados_pac"].
-            "<br>Bairro: ". $campo["bairro_dados_pac"]. "<br>Cidade: ". $campo["cidade_dados_pac"]. 
-            "<br>Estado: ". $campo["estado_dados_pac"]. "<br>CEP: ". $campo["cep_dados_pac"]."<br><br>";
+            echo "<tr>
+        <td>". $campo["nome_dados_pac"]. "</td>
+        <td>". $campo["rg_dados_pac"]. "</td>
+        <td>". $campo["dtn_dados_pac"]. "</td>
+        <td>". $campo["sexo_dados_pac"]. "</td>
+        <td>". $campo["endereco_dados_pac"]. "</td>
+        <td>". $campo["num_res_dados_pac"]. "</td>
+        <td>". $campo["bairro_dados_pac"]. "</td>
+        <td>". $campo["cidade_dados_pac"]. "</td>
+        <td>". $campo["estado_dados_pac"]. "</td>
+        <td> ". $campo['cep_dados_pac'] ."</td>
+        </tr>";
+
         }
             
         mysqli_close($conexao);
@@ -40,7 +62,4 @@ include_once("medico.php") ?>
 
 
 </body>
-<p>
-    <a href="paciente.php">Voltar</a>
-</p>
 </html>

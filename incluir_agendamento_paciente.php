@@ -24,6 +24,7 @@
         $unidade_agend = $_REQUEST["unidade_agen_pac"];
         $convenio_agend = $_REQUEST["convenio_cons"];
         $nome_convenio_agend = $_REQUEST["opcao_convenio"];
+        $cpf_agend = $_REQUEST["cpf_agend"];
 
 
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
@@ -41,7 +42,7 @@
                   para prosseguir com o agendamento!</h2>";
     } else{
          $sql = "INSERT INTO agendamento_paciente VALUES ('$ID_agend', '$data_agend', '$horario_agend', '$modalidade_agend', 
-        '$especialidade_agend', '$unidade_agend','$convenio_agend','$nome_convenio_agend')";
+        '$especialidade_agend', '$unidade_agend','$convenio_agend','$nome_convenio_agend', '$cpf_agend')";
         mysqli_query($conexao, $sql)
         or die("A inclusão falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
         mysqli_close($conexao);

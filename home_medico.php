@@ -36,42 +36,8 @@ include_once ("topo.php"); ?>
    
   </div>
 </nav>
-<!--
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="index.html">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Inicio</a></li>
-        <li><a href="agendamento_paciente_form.php">Agendamento</a></li>
-        <li><a href="atualizar_dados_paciente_form.php">Cadastro</a></li>
-        <li><a href="dados_cadastrais_usuario.php">Atualizar dados de Cadastro</a></li>
-        <li><a href="#">Histórico de consultas</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
--->
   
-<div class="container-fluid text-center">    
-  <div class="row content">
-    <div class="col-sm-2 sidenav">
-      <p><a href="paciente.php">P</a></p>
-      <p><a href="recepcao.php">R</a></p>
-      <p><a href="medico.php">M</a></p>
-    </div>
-    <div class="col-sm-8 text-left"> 
+<div class="col-sm-8 text-left"> 
     <fieldset>
         <h1>Painél do Médico</h1>
         <h3>Seja bem vindo!</h3>
