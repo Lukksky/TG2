@@ -14,11 +14,11 @@ include_once("paciente.php") ?>
 <h1>Histórico de agendamento</h1>
 
 <?php
-
+    $usuario = $_SESSION["usuario"];
 
     date_default_timezone_set('America/Sao_paulo');    
     $DateAndTime2 = date('d-m-Y h:i:s a', time());  
-    echo "Olá, hoje é dia $DateAndTime2.<br><br>";
+    echo "Olá $usuario, hoje é dia $DateAndTime2.<br><br>";
 
 
     $conexao = mysqli_connect('localhost', 'root', '', 'tg2')

@@ -16,14 +16,15 @@ include_once("medico.php") ?>
     <h1>Atualizar dados de cadastro</h1>
 
     <?php
-        $usuario = $_SESSION["usuario"];
+        $cpfusuario =  $_SESSION["cpfusuario"];
+        
 
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
         or die("ERRO: sem conexão");
 
         $sql = "SELECT endereco_dados_pac, num_res_dados_pac, bairro_dados_pac, cidade_dados_pac, 
         estado_dados_pac, cep_dados_pac, nome_dados_pac, rg_dados_pac, dtn_dados_pac, sexo_dados_pac
-        FROM dados_usuario WHERE cpf_dados_pac = $usuario";
+        FROM dados_usuario WHERE cpf_dados_pac = $cpfusuario";
         $res = mysqli_query($conexao, $sql)
         or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 
@@ -55,6 +56,7 @@ include_once("medico.php") ?>
         <td>". $campo["cidade_dados_pac"]. "</td>
         <td>". $campo["estado_dados_pac"]. "</td>
         <td> ". $campo['cep_dados_pac'] ."</td>
+        <td><a href='editar-dados_cadastrais_medico.php?cpf=". $campo["cpf_dados_pac"]."'><img src='img/alterar.gif'></a></td>
         </tr>";
 
         }

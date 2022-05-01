@@ -20,7 +20,7 @@ include_once("topo.php"); ?>
       </li>
       
       <li class="nav-item">
-        <a class="nav-link" href="historico_paciente.php">Historico</a>
+        <a class="nav-link" href="historico_individual_pacientes.php">Historico</a>
       </li>
 
       <li class="nav-item">

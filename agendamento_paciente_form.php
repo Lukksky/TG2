@@ -94,7 +94,4 @@
 </form>
 </body>
 
-
-<a href="paciente.php">Voltar</a>
-
 </html>

@@ -29,7 +29,7 @@ include_once("recepcao.php") ?>
     $sql = "SELECT id_agend, data_agend, horario_agend, modalidade_agend, especialidade_agend, 
     unidade_agend, nome_dados_pac, sexo_dados_pac 
     FROM agendamento_paciente
-    inner join dados_usuario on (cpf_agend=cpf_dados_pac)";
+    inner join dados_usuario";
     $res = mysqli_query($conexao, $sql)
     or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 

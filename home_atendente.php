@@ -21,7 +21,7 @@ include_once ("topo.php"); ?>
         <a class="nav-link" href="cadastrar_novo_usuario_form.php">Cadastro</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Historico</a>
+        <a class="nav-link" href="historico_geral_pacientes.php">Historico</a>
       </li>
 
       <li class="nav-item">

@@ -41,18 +41,18 @@ include_once("topo.php");
   </div>
 </nav>
 
-    <h1>Exclusão de historico</h1>
+    <h1>Exclusão de dados</h1>
     <?php
-        $id_agend = $_REQUEST["id_agend"];
+        $cpf_dados_pac = $_REQUEST["cpf_cad_usuario"];
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
         or die("ERROR: Sem conexão.");
 
-        $sql = "DELETE from agendamento_paciente  WHERE id_agend = '$id_agend'";
+        $sql = "DELETE from dados_usuario  WHERE cpf_dados_pac = '$cpf_dados_pac'";
         mysqli_query($conexao, $sql)
         or die("A exclusão falhou: ". mysqli_error($conexao). "<br>SQL:". $sql);
         mysqli_close($conexao);
     ?>
-    <h2>Agendamento excluído com sucesso!</h2>
+    <h2>Os dados foram excluídos com sucesso!</h2>
     
 </body>
 </html>
