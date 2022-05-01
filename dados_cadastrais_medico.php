@@ -16,11 +16,14 @@ include_once("medico.php") ?>
     <h1>Atualizar dados de cadastro</h1>
 
     <?php
+        $usuario = $_SESSION["usuario"];
+
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
         or die("ERRO: sem conexão");
 
         $sql = "SELECT endereco_dados_pac, num_res_dados_pac, bairro_dados_pac, cidade_dados_pac, 
-        estado_dados_pac, cep_dados_pac, nome_dados_pac, rg_dados_pac, dtn_dados_pac, sexo_dados_pac FROM dados_usuario";
+        estado_dados_pac, cep_dados_pac, nome_dados_pac, rg_dados_pac, dtn_dados_pac, sexo_dados_pac
+        FROM dados_usuario WHERE cpf_dados_pac = $usuario";
         $res = mysqli_query($conexao, $sql)
         or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 

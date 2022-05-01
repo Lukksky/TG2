@@ -15,13 +15,17 @@ include_once ("topo.php"); ?>
     <ul class="navbar-nav mr-auto">
       
       <li class="nav-item">
-        <a class="nav-link" href="historico_paciente.php">Agendamento</a>
+        <a class="nav-link" href="historico_geral_pacientes.php">Gerenciar agenda</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="cadastrar_novo_usuario_form.php">Cadastro</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Historico</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="index.php?sair=1">Sair</a>
       </li>
       
     </ul>
