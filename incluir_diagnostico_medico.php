@@ -5,11 +5,15 @@
 <h1>Inclusão dos dados</h1>
 
 <?php
-    $id_diagnostico = null;
+    $id_diagnostico = $_REQUEST["id_agend"];
     $data_diag = $_REQUEST["data_at_med"];
     $horario_diag = $_REQUEST["hora_at_med"];
     $anotacoes_diag = $_REQUEST["diag_at_med"];
-    $recomendacao_diag = $_REQUEST["recomendacao_med"];
+
+    $recomendacao_diag = "";
+    foreach($_REQUEST['recomendacao_med'] as $checkbox) {
+        $recomendacao_diag .= "$checkbox ";
+     }
 
     $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
     or die("ERROR: sem conexão");

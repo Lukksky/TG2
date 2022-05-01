@@ -16,6 +16,7 @@ $sql = "SELECT * FROM dados_usuario WHERE cpf_dados_pac = '$usuario' AND senha_u
         $registro = $acao_sql->fetch_array(MYSQLI_ASSOC);
 
         //setcookie("usuario",$usuario);
+        $_SESSION["cpfusuario"] = $registro["cpf_dados_pac"];
         $_SESSION["usuario"] = $registro["nome_dados_pac"];
         $_SESSION["perfil_usuario"] = $registro["perfil_usuario"];
         if ($registro["perfil_usuario"] == "Paciente"){

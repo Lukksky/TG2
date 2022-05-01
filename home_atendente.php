@@ -6,7 +6,7 @@ include_once ("topo.php"); ?>
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="recepcao.php">OrderClin</a>
+  <a class="navbar-brand" href="home_atendente.php">OrderClin</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,7 +15,7 @@ include_once ("topo.php"); ?>
     <ul class="navbar-nav mr-auto">
       
       <li class="nav-item">
-        <a class="nav-link" href="historico_paciente.php">Gerenciar agenda</a>
+        <a class="nav-link" href="historico_geral_pacientes.php">Gerenciar agenda</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="cadastrar_novo_usuario_form.php">Cadastro</a>
@@ -32,33 +32,10 @@ include_once ("topo.php"); ?>
    
   </div>
 </nav>
-<!--
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="index.html">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="index.html">Inicio</a></li>
-        <li><a href="agendamento_paciente_form.php">Agendamento</a></li>
-        <li><a href="atualizar_dados_paciente_form.php">Cadastro</a></li>
-        <li><a href="dados_cadastrais_usuario.php">Atualizar dados de Cadastro</a></li>
-        <li><a href="#">Histórico de consultas</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
 
--->
+<?php 
+        $usuario = $_SESSION["usuario"];
+    ?>
 
 <html lang="pt-BR">
 <head>
@@ -79,7 +56,7 @@ include_once ("topo.php"); ?>
   
 
       <h1>Painel da Recepção</h1>
-      <h3>Seja bem vindo!</h3>
+      <h3>Seja bem vindo <?php echo "$usuario" ?>!</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <hr>
       <h3>Dúvidas</h3>

@@ -26,6 +26,7 @@ $campo = mysqli_fetch_array($res);
         <h1 class="text-success text-center">OrderClin</h1>
         <h3>Atendimento médico</h3>
         <form action="incluir_diagnostico_medico.php" method="POST">
+        <input type="hidden" name="id_agend" value="<?php echo  $_REQUEST["agend"]; ?>">
 
     <div class="form-group">
         <label for="id_ag_pac">Código do agendamento </label>
@@ -65,10 +66,10 @@ $campo = mysqli_fetch_array($res);
 
     <div class="form-group">
         <label for="recomendacao_med"><h3>Recomendações médicas: </h3></label><br>
-        <input type="checkbox" name="recomendacao_med" value="atestar"> Atestado<br />
-        <input type="checkbox" name="recomendacao_med" value="medicar"> Medicação<br />
-        <input type="checkbox" name="recomendacao_med" value="solicitacao"> Exame<br />
-        <input type="checkbox" name="recomendacao_med" value="retorno"> Agendar retorno<br />
+        <input type="checkbox" name="recomendacao_med[]" value="Atestado"> Atestado<br />
+        <input type="checkbox" name="recomendacao_med[]" value="Medicação"> Medicação<br />
+        <input type="checkbox" name="recomendacao_med[]" value="Exame"> Exame<br />
+        <input type="checkbox" name="recomendacao_med[]" value="Retorno"> Agendar retorno<br />
     </div>   
     
     <br />

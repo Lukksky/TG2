@@ -1,6 +1,6 @@
-<?php $perfil_pagina = "Atendente";
+<?php $perfil_pagina = "Paciente";
 include_once("topo.php"); 
-include_once("recepcao.php") ?>
+include_once("paciente.php") ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -24,8 +24,11 @@ include_once("recepcao.php") ?>
     $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
     or die("ERRO: sem conexão");
 
-    $sql = "SELECT data_agend, horario_agend, modalidade_agend, especialidade_agend, unidade_agend 
-    FROM agendamento_paciente";
+    $sql = "SELECT data_agend, horario_agend, modalidade_agend, especialidade_agend, unidade_agend, 
+        anotacao_diag, recomendacao_diag
+    FROM agendamento_paciente
+    LEFT JOIN diagnostico_medico ON (id_agend = id_dignostico)
+    WHERE cpf_agend = '".$_SESSION["cpfusuario"]."'";
     $res = mysqli_query($conexao, $sql)
     or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 
@@ -36,7 +39,8 @@ include_once("recepcao.php") ?>
             <td>Especialidade</td>
             <td>Nome do paciente</td>
             <td>Sexo</td>
-            <td></td>
+            <td>Anotações</td>
+            <td>Recomendações</td>
         </tr>';
 
     while ($campo = mysqli_fetch_array($res)) 
@@ -47,6 +51,8 @@ include_once("recepcao.php") ?>
         <td>". $campo["modalidade_agend"]. "</td>
         <td>". $campo["especialidade_agend"]. "</td>
         <td> ". $campo['unidade_agend'] ."</td>
+        <td> ". $campo['anotacao_diag'] ."</td>
+        <td> ". $campo['recomendacao_diag'] ."</td>
         </tr>";
         
     }
