@@ -78,8 +78,8 @@
     </div>   
 
     <div class="form-group">
-        <label for="cpf_agend">CPF: </label>
-        <input type="text" class="form-control" id="cpf_agend" name="cpf_agend" placeholder="CPF sem traços, pontos">
+        
+        <input type="hidden" class="form-control" id="cpf_agend" name="cpf_agend" value="<?php echo $_SESSION['cpfusuario']; ?>" >
     
     </div>   
 

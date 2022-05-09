@@ -34,46 +34,46 @@ include_once("medico.php") ?>
             $cep = $campo['cep_dados_pac'];
         
     ?>
-    <form action="alterar_dados_medico.php" method="POST">
+    <form action="alterar_cadastro_medico.php" method="POST">
     <p>
-        Nome: <input type="text" name="nome" value="<?php echo $nome_dados_pac;?>" readonly />
+        Nome: <input type="text" name="nome" value="<?php echo $nome;?>" readonly />
     </p>
 
     <p>
-        RG: <input type="text" name="rg" value="<?php echo $rg_dados_pac;?>" readonly />
+        RG: <input type="text" name="rg" value="<?php echo $rg;?>" readonly />
     </p>
 
     <p>
-        Data de nascimento: <input type="text" name="dtn" value="<?php echo $dtn_dados_pac;?>" readonly />
+        Data de nascimento: <input type="text" name="dtn" value="<?php echo $dtn;?>" readonly />
     </p>
 
 
     <p>
-        Sexo: <input type="text" name="sexo" value="<?php echo $sexo_dados_pac;?>" />
+        Sexo: <input type="text" name="sexo" value="<?php echo $sexo;?>" />
     </p>
 
     <p>
-        Endereço: <input type="text" name="endereco" value="<?php echo $endereco_dados_pac;?>" />
+        Endereço: <input type="text" name="endereco" value="<?php echo $endereco;?>" />
     </p>
 
     <p>
-        Número: <input type="text" name="num" value="<?php echo $num_res_dados_pac;?>" />
+        Número: <input type="text" name="num" value="<?php echo $num;?>" />
     </p>
 
     <p>
-        Bairro: <input type="text" name="bairro" value="<?php echo $bairro_dados_pac;?>" />
+        Bairro: <input type="text" name="bairro" value="<?php echo $bairro;?>" />
     </p>
 
     <p>
-        Cidade: <input type="text" name="cidade" value="<?php echo $cidade_dados_pac;?>" />
+        Cidade: <input type="text" name="cidade" value="<?php echo $cidade;?>" />
     </p>
 
     <p>
-        Estado: <input type="text" name="estado" value="<?php echo $estado_dados_pac;?>" />
+        Estado: <input type="text" name="estado" value="<?php echo $estado;?>" />
     </p>
 
     <p>
-        CEP: <input type="text" name="cep" value="<?php echo $cep_dados_pac;?>" />
+        CEP: <input type="text" name="cep" value="<?php echo $cep;?>" />
     </p>
 
     <p><input type="submit" value="Salvar" /></p>

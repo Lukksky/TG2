@@ -17,7 +17,7 @@ include_once("medico.php") ?>
 
     <?php
         $cpfusuario =  $_SESSION["cpfusuario"];
-        
+        $nomeusuario = $_SESSION["usuario"];
 
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
         or die("ERRO: sem conexão");
@@ -56,7 +56,7 @@ include_once("medico.php") ?>
         <td>". $campo["cidade_dados_pac"]. "</td>
         <td>". $campo["estado_dados_pac"]. "</td>
         <td> ". $campo['cep_dados_pac'] ."</td>
-        <td><a href='editar-dados_cadastrais_medico.php?cpf=". $campo["cpf_dados_pac"]."'><img src='img/alterar.gif'></a></td>
+        <td><a href='editar-dados_cadastrais_medico.php?cpf=". $campo["$nomeusuario"]."'><img src='img/alterar.gif'></a></td>
         </tr>";
 
         }

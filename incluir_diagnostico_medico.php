@@ -18,7 +18,7 @@
     $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
     or die("ERROR: sem conexão");
 
-    $sql = "INSERT INTO diagnostico_medico VALUES ('$id_diagnostico', '$data_diag', '$horario_diag', 
+    $sql = "REPLACE INTO diagnostico_medico VALUES ('$id_diagnostico', '$data_diag', '$horario_diag', 
     '$anotacoes_diag', '$recomendacao_diag')";
 
     mysqli_query($conexao, $sql)

@@ -21,14 +21,6 @@ include_once ("topo.php"); ?>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="atendimento_medico_form.php">Diagnóstico</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">Histórico</a>
-      </li>
-
-      <li class="nav-item">
         <a class="nav-link" href="index.php?sair=1">Sair</a>
       </li>
       

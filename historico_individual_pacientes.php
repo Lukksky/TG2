@@ -1,24 +1,25 @@
-<?php $perfil_pagina = "Paciente";
-include_once("topo.php"); 
-include_once("paciente.php") ?>
+<?php
+error_reporting(0); // oculta as mensagens de erro ou avisos
+session_start();
+if(isset($_REQUEST["cpf"])) {
+    $cpf = $_REQUEST["cpf"];
+} else {
+    $cpf = $_SESSION["cpfusuario"];
+    $usuario = $_SESSION["usuario"];
+    $perfil_pagina = "Paciente";
+    include_once("topo.php"); 
+    include_once("paciente.php");
+}
+?>
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histórico</title>
-</head>
-<body>
+
 <h1>Histórico de agendamento</h1>
 
 <?php
-    $usuario = $_SESSION["usuario"];
 
-    date_default_timezone_set('America/Sao_paulo');    
-    $DateAndTime2 = date('d-m-Y h:i:s a', time());  
-    echo "Olá $usuario, hoje é dia $DateAndTime2.<br><br>";
+    //date_default_timezone_set('America/Sao_paulo');    
+    //$DateAndTime2 = date('d-m-Y h:i:s a', time());  
+    //echo "Olá $usuario, hoje é dia $DateAndTime2.<br><br>";
 
 
     $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
@@ -28,7 +29,7 @@ include_once("paciente.php") ?>
         anotacao_diag, recomendacao_diag
     FROM agendamento_paciente
     LEFT JOIN diagnostico_medico ON (id_agend = id_dignostico)
-    WHERE cpf_agend = '".$_SESSION["cpfusuario"]."'";
+    WHERE cpf_agend = '".$cpf."'";
     $res = mysqli_query($conexao, $sql)
     or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
 
