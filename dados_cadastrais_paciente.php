@@ -54,6 +54,8 @@ include_once("paciente.php") ?>
             <td> ". $campo['cidade_dados_pac'] ."</td>
             <td> ". $campo['estado_dados_pac'] ."</td>
             <td> ". $campo['cep_dados_pac'] ."</td>
+            <td><a href='editar-dados_cadastrais_paciente.php?cpf=$cpfusuario'><img src=
+        'img/alterar.gif'></a></td>
             </tr>";
         }
             

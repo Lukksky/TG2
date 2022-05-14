@@ -1,6 +1,6 @@
-<?php $perfil_pagina = "Medico";
+<?php $perfil_pagina = "Paciente";
 include_once ("topo.php");
-include_once("medico.php") ?>
+include_once("paciente.php") ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">

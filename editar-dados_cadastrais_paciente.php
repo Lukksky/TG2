@@ -1,6 +1,6 @@
-<?php $perfil_pagina = "Medico";
+<?php $perfil_pagina = "Paciente";
 include_once("topo.php"); 
-include_once("medico.php") ?>
+include_once("paciente.php") ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -36,7 +36,7 @@ include_once("medico.php") ?>
         
         
     ?>
-    <form action="alterar_cadastro_medico.php" method="POST">
+    <form action="alterar_cadastro_paciente.php" method="POST">
     <p>
         Nome: <input type="text" name="nome" value="<?php echo $nome;?>" readonly />
     </p>

@@ -1,8 +1,6 @@
 <?php $perfil_pagina = "Medico";
 include_once("topo.php"); 
 include_once("medico.php") ?>
-
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -22,7 +20,7 @@ include_once("medico.php") ?>
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
         or die("ERRO: sem conexão");
 
-        $sql = "SELECT endereco_dados_pac, num_res_dados_pac, bairro_dados_pac, cidade_dados_pac, 
+        $sql = "SELECT cpf_dados_pac, endereco_dados_pac, num_res_dados_pac, bairro_dados_pac, cidade_dados_pac, 
         estado_dados_pac, cep_dados_pac, nome_dados_pac, rg_dados_pac, dtn_dados_pac, sexo_dados_pac
         FROM dados_usuario WHERE cpf_dados_pac = $cpfusuario";
         $res = mysqli_query($conexao, $sql)
@@ -56,7 +54,8 @@ include_once("medico.php") ?>
         <td>". $campo["cidade_dados_pac"]. "</td>
         <td>". $campo["estado_dados_pac"]. "</td>
         <td> ". $campo['cep_dados_pac'] ."</td>
-        <td><a href='editar-dados_cadastrais_medico.php?cpf=". $campo["$nomeusuario"]."'><img src='img/alterar.gif'></a></td>
+        <td><a href='editar-dados_cadastrais_medico.php?cpf=$cpfusuario'><img src=
+        'img/alterar.gif'></a></td>
         </tr>";
 
         }

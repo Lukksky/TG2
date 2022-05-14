@@ -10,7 +10,7 @@ if(isset($_REQUEST["data"])) {
 ?>
 
 
-<h1>Histórico de agendamento</h1>
+<h1>Agenda médica - Atendimentos diários</h1>
 
 <form>
     Data: <input type="text" name="data" value="<?php echo $data; ?>">
