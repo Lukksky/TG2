@@ -14,7 +14,7 @@ include_once("medico.php") ?>
     <h1>Alteração dos dados</h1>
 
     <?php
-    
+        $cpf_usuario = $_REQUEST['cpf'];
         $endereco_usuario = $_REQUEST["endereco"];
         $num_res_usuario = $_REQUEST["num"];
         $bairro_usuario = $_REQUEST["bairro"];
@@ -30,7 +30,10 @@ include_once("medico.php") ?>
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
         or die("ERROR: sem conexão");
 
-        $sql = "UPDATE dados_usuario VALUES (''$endereco_usuario', '$num_res_usuario', 
+        $sql = "REPLACE dados_usuario (cpf_dados_pac, endereco_dados_pac, num_res_dados_pac, 
+        bairro_dados_pac, cidade_dados_pac, estado_dados_pac, 
+        cep_dados_pac, nome_dados_pac, rg_dados_pac, 
+        dtn_dados_pac, sexo_dados_pac) VALUES ('$cpf_usuario', '$endereco_usuario', '$num_res_usuario', 
         '$bairro_usuario', '$cidade_usuario','$estado_usuario','$cep_usuario','$nome_cad_usuario',
         '$rg_cad_usuario','$dtn_cad_usuario','$sexo_usuario')";
         mysqli_query($conexao, $sql)

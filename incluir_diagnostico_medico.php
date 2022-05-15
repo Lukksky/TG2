@@ -6,8 +6,8 @@
 
 <?php
     $id_diagnostico = $_REQUEST["id_agend"];
-    $data_diag = $_REQUEST["data_at_med"];
-    $horario_diag = $_REQUEST["hora_at_med"];
+    //$data_diag = $_REQUEST["data_at_med"];
+    //$horario_diag = $_REQUEST["hora_at_med"];
     $anotacoes_diag = $_REQUEST["diag_at_med"];
 
     $recomendacao_diag = "";
@@ -18,8 +18,8 @@
     $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
     or die("ERROR: sem conexão");
 
-    $sql = "REPLACE INTO diagnostico_medico VALUES ('$id_diagnostico', '$data_diag', '$horario_diag', 
-    '$anotacoes_diag', '$recomendacao_diag')";
+    $sql = "REPLACE INTO diagnostico_medico (id_dignostico, data_diag, horario_diag, anotacao_diag, recomendacao_diag) 
+    VALUES ('$id_diagnostico', curdate(), curtime(), '$anotacoes_diag', '$recomendacao_diag')";
 
     mysqli_query($conexao, $sql)
     or die("A inclusão falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);

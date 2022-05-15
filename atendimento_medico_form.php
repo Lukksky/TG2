@@ -40,22 +40,6 @@ $campo = mysqli_fetch_array($res);
     
     </div>
 
-   
-
-    <h3>Atendido em:</h3>
-
-    <div class="form-group">
-        <label for="data_at_med">Data do atendimento: </label>
-        <input type="date" class="form-control" id="data_at_med" name="data_at_med" placeholder="Digite o número do seu CPF">
-    
-    </div>
-
-    <div class="form-group">
-        <label for="hora_at_med">Hora do atendimento: </label>
-        <input type="time" class="form-control" id="hora_at_med" name="hora_at_med" placeholder="Digite o número do seu CPF">
-    
-    </div>
-
     <h3>Diagnóstico médico:</h3>
 
     <div class="form-group">

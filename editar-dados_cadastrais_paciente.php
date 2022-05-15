@@ -13,11 +13,13 @@ include_once("paciente.php") ?>
 <body>
     <h1>Edição de Clientes</h1>
     <?php
-        $cpf = $_SESSION["cpfusuario"];
+        $cpf = $_REQUEST["cpf"];
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
         or die("ERRO: Sem conexão.");
 
-        $sql = "SELECT nome_dados_pac, rg_dados_pac, dtn_dados_pac, sexo_dados_pac, endereco_dados_pac, num_res_dados_pac, bairro_dados_pac, cidade_dados_pac, estado_dados_pac, cep_dados_pac FROM dados_usuario WHERE cpf_dados_pac = '$cpf'";
+        $sql = "SELECT nome_dados_pac, rg_dados_pac, dtn_dados_pac, sexo_dados_pac, endereco_dados_pac, 
+        num_res_dados_pac, bairro_dados_pac, cidade_dados_pac, estado_dados_pac, cep_dados_pac 
+        FROM dados_usuario WHERE cpf_dados_pac = '$cpf'";
         $res = mysqli_query($conexao, $sql)
         or die("A consulta falhou: ". mysqli_error($conexao). "<br>SQL:" .$sql);
 
@@ -37,6 +39,9 @@ include_once("paciente.php") ?>
         
     ?>
     <form action="alterar_cadastro_paciente.php" method="POST">
+
+    <input type="hidden" name="cpf" value="<?php echo $cpf;?>">
+
     <p>
         Nome: <input type="text" name="nome" value="<?php echo $nome;?>" readonly />
     </p>

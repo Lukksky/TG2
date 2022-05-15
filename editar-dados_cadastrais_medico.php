@@ -13,7 +13,7 @@ include_once("medico.php") ?>
 <body>
     <h1>Edição de Clientes</h1>
     <?php
-        $cpf = $_SESSION["cpfusuario"];
+        $cpf = $_REQUEST["cpf"];
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
         or die("ERRO: Sem conexão.");
 
@@ -37,6 +37,9 @@ include_once("medico.php") ?>
         
     ?>
     <form action="alterar_cadastro_medico.php" method="POST">
+    
+    <input type="hidden" name="cpf" value="<?php echo $cpf;?>">
+    
     <p>
         Nome: <input type="text" name="nome" value="<?php echo $nome;?>" readonly />
     </p>
