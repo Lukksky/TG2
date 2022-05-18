@@ -30,12 +30,19 @@ include_once("paciente.php") ?>
         $conexao = mysqli_connect('localhost', 'root', '', 'tg2')
         or die("ERROR: sem conexão");
 
-        $sql = "REPLACE dados_usuario (cpf_dados_pac, endereco_dados_pac, num_res_dados_pac, 
-        bairro_dados_pac, cidade_dados_pac, estado_dados_pac, 
-        cep_dados_pac, nome_dados_pac, rg_dados_pac, 
-        dtn_dados_pac, sexo_dados_pac) VALUES ('$cpf_usuario', '$endereco_usuario', '$num_res_usuario', 
-        '$bairro_usuario', '$cidade_usuario','$estado_usuario','$cep_usuario','$nome_cad_usuario',
-        '$rg_cad_usuario','$dtn_cad_usuario','$sexo_usuario')";
+
+        $sql = "UPDATE dados_usuario SET
+        endereco_dados_pac = '$endereco_usuario'
+        , num_res_dados_pac = '$num_res_usuario'
+        , bairro_dados_pac = '$bairro_usuario'
+        , cidade_dados_pac = '$cidade_usuario'
+        , estado_dados_pac = '$estado_usuario'
+        , cep_dados_pac = '$cep_usuario'
+        , nome_dados_pac = '$nome_cad_usuario'
+        , rg_dados_pac = '$rg_cad_usuario'
+        , dtn_dados_pac = '$dtn_cad_usuario'
+        , sexo_dados_pac  = '$sexo_usuario'
+        WHERE cpf_dados_pac = '$cpf_usuario'";
         mysqli_query($conexao, $sql)
         or die("A inclusão falhou: ". mysqli_error($conexao). "<br>SQL:".$sql);
         mysqli_close($conexao);

@@ -38,8 +38,8 @@ if(isset($_REQUEST["cpf"])) {
             <td>Data agendada</td>
             <td>Horário</td>
             <td>Especialidade</td>
-            <td>Nome do paciente</td>
-            <td>Sexo</td>
+            <td>Modalidade</td>
+            <td>Unidade</td>
             <td>Anotações</td>
             <td>Recomendações</td>
         </tr>';
@@ -49,8 +49,8 @@ if(isset($_REQUEST["cpf"])) {
         echo "<tr>
         <td>". $campo["data_agend"]. "</td>
         <td>". $campo["horario_agend"]. "</td>
-        <td>". $campo["modalidade_agend"]. "</td>
         <td>". $campo["especialidade_agend"]. "</td>
+        <td>". $campo["modalidade_agend"]. "</td>
         <td> ". $campo['unidade_agend'] ."</td>
         <td> ". $campo['anotacao_diag'] ."</td>
         <td> ". $campo['recomendacao_diag'] ."</td>
